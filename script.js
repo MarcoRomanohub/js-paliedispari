@@ -37,7 +37,18 @@ numPc = getRandomNumber(1,5);
 console.log(numPc);
 somma = numGiocatore + numPc;
 risultato = EvenOrOdd(numGiocatore + numPc); 
+const output = document.querySelector('h1');
 
+if((somma % 2 === 0 && pariDispari === 'pari') || (somma % 2 !== 0 && pariDispari === 'dispari')){
+  vincitore = 'Vince il giocatore'
+}else{
+  vincitore = 'Vince il pc';
+}
+
+output.innerHTML =  ` Il giocatore ha giocato ${pariDispari} con numero ${numGiocatore} <br> 
+Il pc ha giocato ${numPc}  <br>
+${risultato} <br>
+${vincitore}`
 
 function getRandomNumber(min, max) {
   let randomNumber;
@@ -54,12 +65,6 @@ function EvenOrOdd(somma){
   }
   console.log(risultato);
   return risultato;
-}
-
-if((somma % 2 === 0 && pariDispari === 'pari') || (somma % 2 !== 0 && pariDispari === 'dispari')){
-  vincitore = 'Vince il giocatore'
-}else{
-  vincitore = 'Vince il pc';
 }
 
 
