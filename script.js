@@ -59,7 +59,7 @@ while(!validNumber){
   }
 }
   
-numPc = getRandomNumber(1,5);
+numPc = getRandomNumber();
 console.log(numPc);
 somma = numGiocatore + numPc;
 risultato = EvenOrOdd(numGiocatore + numPc); 
@@ -76,11 +76,8 @@ Il pc ha giocato ${numPc}  <br>
 ${risultato} <br>
 ${vincitore}`
 
-function getRandomNumber(min, max) {
-  let randomNumber;
-  randomNumber = Math.floor(Math.random()*(max - min + 1) + min);
-  console.log(randomNumber);
-  return randomNumber;
+function getRandomNumber() {
+  return Math.ceil(Math.random()* 5);
 }
 
 function EvenOrOdd(somma){
